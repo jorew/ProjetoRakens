@@ -143,13 +143,13 @@ background-color: #a32626;
 display: flex;
 align-items: center;
 width: auto;
-height: 80px;
+height: 120px;
 }
 
 
 .container-flex2 img {
-max-height: 90px;
-max-width: 70px;
+max-height: 110px;
+max-width: 90px;
 padding: 10px;
 border-radius: 50px;
 
