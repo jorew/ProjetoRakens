@@ -1,0 +1,161 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(45deg,
+      #000000 0%,
+      #200000 25%,
+      #500000 50%,
+      #800000 75%,
+      #b00000 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.pagina {
+  width: 95%;
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: #a32626;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #a32626;
+  overflow: hidden;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 12px;
+  border-right: 1px solid #333;
+}
+
+.menu a:hover {
+  background-color: #333;
+}
+
+
+.n3-align {
+color: white;
+text-align: center;
+}
+
+.n3-sumario {
+color: #ba443c;
+opacity: 70%;
+text-align: center;
+text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
+}
+
+
+.p-int {
+font-size: 12px;
+color: white; 
+text-align: center; 
+padding: 20px;
+
+}
+
+
+.p-aar {
+font-size: 10px;
+color: white; 
+margin-left: 25px;   /* Esquerdo */
+margin-right: 25px;  /* Direito */
+text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
+}
+
+
+.p-cont {
+text-align: center;
+padding-left: 20px;
+padding-right: 20px;
+color: #F2F2F2;
+text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
+}
+
+
+
+
+
+
+
+
+/*
+animation: aparecer 5s ease;
+@keyframes aparecer {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+*/
+
+
+
+
+
+
+.container-flex {
+border-radius: 15px;
+background-color: #a32626;
+display: flex;
+align-items: center;
+}
+
+.container-flex img {
+border-radius: 25px;
+max-width: 120px; 
+max-height: 180px;
+padding: 10px;
+
+}
+
+#sumario {
+font-size: 12px;
+margin-left: 25px;   /* Esquerdo */
+margin-right: 25px;  /* Direito */
+color: #ba443c;
+opacity: 70%;
+text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
+}
+
+.container-flex2 {
+border-radius: 20px;
+background-color: #a32626;
+display: flex;
+align-items: center;
+width: auto;
+height: 80px;
+}
+
+
+.container-flex2 img {
+max-height: 90px;
+max-width: 70px;
+padding: 10px;
+border-radius: 50px;
+
+}
+
+.ArmadurasIMG {
+max-height: 500px;
+max-width: 1000px;
+}
