@@ -172,6 +172,26 @@ border-radius: 50px;
 
 }
 
+.container-flex3 {
+  border-radius: 20px;
+  background-color: #a32626;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 300px;
+  }
+  
+  
+  .container-flex3 img {
+  max-height: 220px;
+  max-width: 190px;
+  padding: 10px;
+  border-radius: 50px;
+  
+  }
+
+
+
 .ArmadurasIMG {
 max-height: 500px;
 max-width: 1000px;
