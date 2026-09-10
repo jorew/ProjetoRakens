@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/1encantamentos', (req, res) => {
-  res.render('equip/1encantamentos');
+  res.render('1encantamentos');
 });
 
 router.get('/2punicao', (req, res) => {
