@@ -5,8 +5,8 @@ router.get('/', function(req, res, next) {
   res.render('equip/armaduras');
 });
 
-router.get('/1encantamentos', (req, res) => {
-  res.render('1encantamentos');
+router.get('/1encantamento', (req, res) => {
+  res.render('equip/1encantamentos');
 });
 
 router.get('/2punicao', (req, res) => {
