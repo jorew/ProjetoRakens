@@ -12,8 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Exemplo de playlist (Substitua pelos caminhos dos seus arquivos de áudio)
     const playlist = [
-      { title: "Música Demonstrativa 1 - Nome Completo Longo da Faixa para Testar o Marquee", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-      { title: "Música Demonstrativa 2 - Segunda Faixa da Sua Playlist", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" }
+      { 
+        title: "Nome da Sua Música - Artista Exemplo", 
+        src: " " 
+      },
+      { 
+        title: "Segunda Música - Outro Artista", 
+        src: " " 
+      }
     ];
   
     let currentTrackIndex = 0;
