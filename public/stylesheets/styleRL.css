@@ -102,28 +102,18 @@ padding-left: 20px;
 padding-right: 20px;
 color: #F2F2F2;
 text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
-}
-
-
-
-
-
-
-
-
-/*
 animation: aparecer 5s ease;
-@keyframes aparecer {
-  from {
+  @keyframes aparecer {
+    from {
       opacity: 0;
-  }
+    }
 
-  to {
+    to {
       opacity: 1;
+    }
   }
 }
 
-*/
 
 
 
@@ -195,4 +185,12 @@ border-radius: 50px;
 .ArmadurasIMG {
 max-height: 500px;
 max-width: 1000px;
+}
+
+
+/* Este container está vinculado ao playlist.js */
+.container_footer {
+
+  
+
 }
