@@ -300,11 +300,11 @@ max-width: 1000px;
 
 .btn-play {
   font-size: 1.6rem;
-  color: #1db954; /* Estilo verde Spotify */
+  color: #932890; /* Estilo verde Spotify */
 }
 
 .btn-play:hover {
-  color: #1ed760;
+  color: #b33caf;
 }
 
 /* Barra de Progresso e Tempos */
@@ -334,7 +334,7 @@ max-width: 1000px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #1db954;
+  background: #932890;
   cursor: pointer;
 }
 
