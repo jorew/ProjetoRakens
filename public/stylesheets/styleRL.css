@@ -189,8 +189,166 @@ max-width: 1000px;
 
 
 /* Este container está vinculado ao playlist.js */
-.container_footer {
+/* Container Principal do Footer */
+#container_footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  
+/* --- Lado Esquerdo: Vinil + Letreiro Marquee --- */
+.footer-track-info {
+  display: flex;
+  align-items: center;
+  width: 35%;
+  overflow: hidden;
+}
 
+/* Disco de Vinil */
+.vinyl-record {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #333 15%, #111 16%, #111 30%, #222 31%, #111 70%);
+  border: 2px solid #333;
+  box-shadow: 0 0 5px rgba(0,0,0,0.8);
+  margin-right: 15px;
+  flex-shrink: 0;
+  /* Animação de Rotação */
+  animation: spin 3s linear infinite;
+  animation-play-state: paused; /* Inicia pausado */
+}
+
+/* Classe ativada via JS quando a música dá play */
+.vinyl-record.playing {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Container do Letreiro */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Texto em Movimento Contínuo da Esquerda para a Direita */
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+/* --- Centro: Controles de Áudio + Barra de Progresso --- */
+.footer-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 6px;
+}
+
+.btn-control {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-control:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.btn-play {
+  font-size: 1.6rem;
+  color: #1db954; /* Estilo verde Spotify */
+}
+
+.btn-play:hover {
+  color: #1ed760;
+}
+
+/* Barra de Progresso e Tempos */
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: #b3b3b3;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #4f4f4f;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1db954;
+  cursor: pointer;
+}
+
+/* --- Lado Direito: Controle de Volume (Opcional) --- */
+.footer-volume {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume-bar {
+  width: 80px;
+  height: 4px;
+  cursor: pointer;
 }

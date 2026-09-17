@@ -6,4 +6,37 @@
  </div>
 -->
 
+<div id="container_footer">
+  <!-- Áudio Oculto -->
+  <audio id="audio-player" src=""></audio>
 
+  <!-- Lado Esquerdo: Vinil + Nome da Música -->
+  <div class="footer-track-info">
+    <!-- Substitua o src abaixo pelo caminho da sua imagem PNG de disco caso já possua uma -->
+    <div class="vinyl-record" id="vinyl"></div>
+    <div class="marquee-container">
+      <span class="marquee-text" id="track-title">Nenhuma música selecionada — Adicione uma faixa para começar a ouvir</span>
+    </div>
+  </div>
+
+  <!-- Centro: Controles + Barra de Tempo -->
+  <div class="footer-controls">
+    <div class="control-buttons">
+      <button class="btn-control" id="btn-prev" title="Anterior">⏮</button>
+      <button class="btn-control btn-play" id="btn-play-pause" title="Play/Pause">▶</button>
+      <button class="btn-control" id="btn-next" title="Próxima">⏭</button>
+    </div>
+
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress-bar" class="progress-bar" value="0" min="0" max="100">
+      <span id="duration-time">0:00</span>
+    </div>
+  </div>
+
+  <!-- Lado Direito: Volume -->
+  <div class="footer-volume">
+    <span>🔊</span>
+    <input type="range" id="volume-bar" class="volume-bar" min="0" max="1" step="0.01" value="0.8">
+  </div>
+</div>
