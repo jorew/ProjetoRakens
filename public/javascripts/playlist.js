@@ -90,3 +90,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carrega a primeira faixa ao inicializar
     loadTrack(currentTrackIndex);
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Captura cliques nos links do menu
+    document.querySelectorAll('a.nav-link').forEach(link => {
+      link.addEventListener('click', async (e) => {
+        e.preventDefault(); // Evita o reload da página
+        const url = link.getAttribute('href');
+  
+        try {
+          const response = await fetch(url);
+          const htmlText = await response.text();
+  
+          // Extrai o novo #main-content do HTML recebido
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(htmlText, 'text/html');
+          const newContent = doc.getElementById('main-content').innerHTML;
+  
+          // Atualiza a tela e a URL do navegador
+          document.getElementById('main-content').innerHTML = newContent;
+          window.history.pushState({}, '', url);
+  
+        } catch (err) {
+          window.location.href = url; // Fallback caso ocorra erro
+        }
+      });
+    });
+  
+    // Mantém os botões do navegador (Voltar/Avançar) funcionando
+    window.addEventListener('popstate', async () => {
+      const response = await fetch(window.location.href);
+      const htmlText = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlText, 'text/html');
+      document.getElementById('main-content').innerHTML = doc.getElementById('main-content').innerHTML;
+    });
+  });
