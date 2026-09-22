@@ -1,6 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
+// Exemplo de rota dinâmica no Express
+router.get('/equip/:slug', async (req, res) => {
+  try {
+    const item = await Equipamento.findOne({ slug: req.params.slug });
+    if (!item) return res.status(404).render('error', { message: 'Equipamento não encontrado' });
+    
+    res.render('equip/detalhe', { item });
+  } catch (error) {
+    res.status(500).send('Erro no servidor');
+  }
+});
+
 router.get('/', function(req, res, next) {
   res.render('equip/armaduras');
 });
