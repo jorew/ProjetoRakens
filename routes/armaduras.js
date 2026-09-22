@@ -1,3 +1,4 @@
+const Equipamento = require('../models/Equipamento');
 var express = require('express');
 var router = express.Router();
 
@@ -12,6 +13,8 @@ router.get('/equip/:slug', async (req, res) => {
     res.status(500).send('Erro no servidor');
   }
 });
+
+module.exports = router;
 
 /*router.get('/', function(req, res, next) {
   res.render('equip/armaduras');

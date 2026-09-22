@@ -3,15 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose'); // 1. Importa o Mongoose
 
+// 2. Conecta ao MongoDB Compass (local)
+mongoose.connect('mongodb://127.0.0.1:27017/projetorakens')
+  .then(() => console.log('Conectado ao MongoDB com sucesso!'))
+  .catch((err) => console.error('Erro ao conectar ao MongoDB:', err));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var contexRouter = require('./routes/contexto');
+var contextRouter = require('./routes/contexto');
 var armRouter = require('./routes/armaduras');
-
-
-
 
 var app = express();
 
@@ -28,10 +30,8 @@ app.use(express.static('public'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/contexto', contexRouter);
+app.use('/contexto', contextRouter);
 app.use('/armaduras', armRouter);
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
