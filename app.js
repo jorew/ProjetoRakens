@@ -6,7 +6,7 @@ var logger = require('morgan');
 const mongoose = require('mongoose'); // 1. Importa o Mongoose
 
 // 2. Conecta ao MongoDB Compass (local)
-mongoose.connect('mongodb://127.0.0.1:27017/projetorakens')
+mongoose.connect('mongodb+srv://jorewmario_db_user:VYI3VploxCCR4JWb@testandomongodb.izcp8zd.mongodb.net/?appName=TestandoMongoDB')
   .then(() => console.log('Conectado ao MongoDB com sucesso!'))
   .catch((err) => console.error('Erro ao conectar ao MongoDB:', err));
 

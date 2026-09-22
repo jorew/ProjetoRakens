@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 // 2. Rota dinâmica para a página individual de cada armadura
 router.get('/equip/:slug', async (req, res) => {
   try {
-    const item = await equipamentos.findOne({ slug: req.params.slug });
+    const item = await Equipamento.findOne({ slug: req.params.slug });
     
     if (!item) {
       return res.status(404).render('error', { message: 'Equipamento não encontrado' });
