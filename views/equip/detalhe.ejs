@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<main class="container">
+  <h1><%= item.nome %> (ID: <%= item._id %>)</h1>
+  <p><strong>Dono:</strong> <%= item.dono %></p>
+  <p><strong>Conceito:</strong> <%= item.conceito %></p>
+  <p><strong>Dignidade:</strong> <%= item.dignidade %></p>
+
+  <h2>Habilidades:</h2>
+  <ul>
+    <% item.habilidades.forEach(function(habilidade) { %>
+      <li><%= habilidade %></li>
+    <% }); %>
+  </ul>
+
+  <p><%= item.descricao %></p>
+</main>
+
+<%- include('../partials/footer') %>
