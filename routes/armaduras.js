@@ -13,7 +13,7 @@ router.get('/equip/:slug', async (req, res) => {
   }
 });
 
-router.get('/', function(req, res, next) {
+/*router.get('/', function(req, res, next) {
   res.render('equip/armaduras');
 });
 
@@ -66,3 +66,4 @@ router.get('/10esperanca', (req, res) => {
 
 
 module.exports = router;
+*/
