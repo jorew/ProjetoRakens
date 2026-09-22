@@ -1,11 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styleRL.css">
+    <title>Armaduras</title>
+</head>
+<body>
 
- <!DOCTYPE html>
+<br>
+  <h1 style="color: white; text-align: center;">Os Rakens Lendários</h1>
+<pre></pre>
+ 
+<main>
+  <h3 class="n3-align">Armaduras Raken</h3>
+
+  <%- include('../partials/header') %>
+  <br>
+  <h3 class="n3-align">Lista de Armaduras</h3>
+  <br>
+
+  <ol>
+    <% armaduras.forEach(function(item) { %>
+      <li>
+        <a href="/armaduras/equip/<%= item.slug %>">
+          <div class="container-flex2">
+            <!-- Caso tenha guardado o caminho da imagem no banco (item.imagem), use-o aqui. 
+                 Caso contrário, mantemos a imagem padrão de exemplo. -->
+            <img src="/images/SymbolsRL/vitoriaregiaRL.png" alt="<%= item.nome %>">
+            <h4 class="a-aar">Raken <%= item.nome %></h4>
+          </div>
+        </a>
+      </li>
+      <br>
+    <% }); %>
+  </ol>
+
+  <pre></pre>
+
+  <%- include('../partials/footer') %>
+</main>
+
+</body>
+</html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Link para o arquivo style.css -->
+    Link para o arquivo style.css 
 
     <link rel="stylesheet" href="/stylesheets/styleRL.css">
 
@@ -38,7 +97,7 @@
 
 
 <ol>
-  <li> <!--Item 1-->
+  <li> Item 1
     <a href="/armaduras/1encantamento">
       <div class="container-flex2">
       <img src="images/SymbolsRL/vitoriaregiaRL.png">
@@ -49,7 +108,7 @@
 <br>
 
 
-<li> <!--Item 2-->
+<li> Item 2
     <a href="/armaduras/2punicao">
       <div class="container-flex2">
       <img src="images/SymbolsRL/Bode4RL.png">
@@ -60,7 +119,7 @@
 <br>
 
 
-<li> <!--Item 3-->
+<li> Item 3
     <a href="/armaduras/3paixao">
       <div class="container-flex2">
       <img src="images/SymbolsRL/paixaoRL.png">
@@ -71,7 +130,7 @@
 <br>
 
 
-<li> <!--Item 4-->
+<li> Item 4
     <a href="/armaduras/4tempo">
       <div class="container-flex2">
       <img src="images/SymbolsRL/OuroborosRL.png">
@@ -82,7 +141,7 @@
 <br>
 
 
-<li> <!--Item 5-->
+<li> Item 5
     <a href="/armaduras/5abismo">
       <div class="container-flex2">
         <img src="images/SymbolsRL/portalRL.png">
@@ -93,7 +152,7 @@
 <br>
 
 
-<li> <!--Item 6-->
+<li> Item 6
     <a href="/armaduras/6catastrofe">
       <div class="container-flex2">
       <img src="images/SymbolsRL/catastrofeRL.png">
@@ -104,7 +163,7 @@
 <br>
 
 
-<li> <!--Item 7-->
+<li> Item 7
     <a href="/armaduras/7criacao">
       <div class="container-flex2">
       <img src="images/SymbolsRL/Pomba4RL.png">
@@ -115,7 +174,7 @@
 <br>
 
 
-<li> <!--Item 8-->
+<li> Item 8
     <a href="/armaduras/8som">
       <div class="container-flex2">
       <img src="images/SymbolsRL/HarpaRL.png">
@@ -126,7 +185,7 @@
 <br>
 
 
-<li> <!--Item 9-->
+<li> Item 9
     <a href="/armaduras/9extincao">
       <div class="container-flex2">
       <img src="images/SymbolsRL/extincaoRL.png">
@@ -137,7 +196,7 @@
 <br>
 
 
-<li> <!--Item 10-->
+<li> Item 10
     <a href="/armaduras/10esperanca">
       <div class="container-flex2">
       <img src="images/SymbolsRL/vitoriaregiaRL.png">
@@ -171,3 +230,4 @@
 </pre>
 
 <%- include('../partials/footer') %>
+    -->

@@ -1,15 +1,33 @@
+const express = require('express');
+const router = express.Router();
 const Equipamento = require('../models/Equipamento');
-var express = require('express');
-var router = express.Router();
 
-// Exemplo de rota dinâmica no Express
+// 1. Rota para a lista principal de armaduras (Acesso em: http://localhost:3000/armaduras)
+router.get('/', async (req, res) => {
+  try {
+    // Busca todas as armaduras no MongoDB
+    const listaArmaduras = await Equipamento.find();
+    
+    // Renderiza a view views/equip/armaduras.ejs enviando os dados buscados
+    res.render('equip/armaduras', { armaduras: listaArmaduras });
+  } catch (error) {
+    console.error('Erro ao buscar armaduras:', error);
+    res.status(500).send('Erro ao carregar a lista de armaduras');
+  }
+});
+
+// 2. Rota dinâmica para a página individual de cada armadura
 router.get('/equip/:slug', async (req, res) => {
   try {
     const item = await Equipamento.findOne({ slug: req.params.slug });
-    if (!item) return res.status(404).render('error', { message: 'Equipamento não encontrado' });
+    
+    if (!item) {
+      return res.status(404).render('error', { message: 'Equipamento não encontrado' });
+    }
     
     res.render('equip/detalhe', { item });
   } catch (error) {
+    console.error('Erro ao buscar equipamento:', error);
     res.status(500).send('Erro no servidor');
   }
 });
