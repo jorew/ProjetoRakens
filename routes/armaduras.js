@@ -163,6 +163,13 @@ router.get('/equip/:slug', async (req, res) => {
 module.exports = router;
 */
 
+
+
+
+
+
+
+
 var express = require('express');
 var router = express.Router();
 
@@ -188,6 +195,8 @@ router.get('/equip/:slug', async (req, res) => {
     const db = req.app.get('db');
     if (!db) {
       return res.status(503).send('Servidor a conectar à base de dados... Por favor, recarregue a página.');
+    } else {
+      return res.status(200).send('Sucesso ao carregar o banco de dados');
     }
 
     // Procura pelo campo 'les_' que contém os slugs no teu Atlas
