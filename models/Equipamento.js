@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+
+/* const mongoose = require('mongoose');
 
 const equipamentoSchema = new mongoose.Schema({
   _id: { type: Number, required: true },               // Chave primária customizada (ex: 1, 2, 3...)
@@ -12,3 +13,5 @@ const equipamentoSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Equipamento', equipamentoSchema, 'equipamentos');
+
+*/
