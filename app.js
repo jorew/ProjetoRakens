@@ -203,24 +203,22 @@ var armRouter = require('./routes/armaduras');
 
 var app = express();
 
-const uri = "mongodb+srv://jorewmario_db_user:amoreraridade14@testandomongodb.izcp8zd.mongodb.net/db_rakens?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { serverSelectionTimeoutMS: 5000 });
+// Connection String apontando para o banco 'db_rakens'
+const uri = "mongodb+srv://jorewmario_db_user:<sua_senha>@testandomongodb.izcp8zd.mongodb.net/db_rakens?retryWrites=true&w=majority";
 
-// Função de conexão que retorna uma Promise
-async function conectarBanco() {
-  try {
-    console.log("A conectar ao MongoDB Atlas...");
-    await client.connect();
-    await client.db("db_rakens").command({ ping: 1 });
-    console.log('✅ Conectado com sucesso ao MongoDB Atlas (db_rakens)!');
-    
+const client = new MongoClient(uri);
+
+// Conexão assíncrona não-bloqueante
+client.connect()
+  .then(() => {
+    console.log('✅ Conectado ao MongoDB Atlas com sucesso!');
     app.set('db', client.db('db_rakens'));
-  } catch (err) {
-    console.error('❌ Erro CRÍTICO ao conectar ao MongoDB Atlas:', err.message);
-  }
-}
+  })
+  .catch(err => {
+    console.error('❌ Erro na conexão com o MongoDB Atlas:', err.message);
+  });
 
-// Configuração de views e middlewares
+// Configuração da View Engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -230,15 +228,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Configuração de Rotas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contexto', contextRouter);
 app.use('/armaduras', armRouter);
 
+// Tratamento 404
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
+// Tratamento de Erros Globais
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -246,5 +247,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// Exporta tanto o 'app' quanto a função 'conectarBanco'
-module.exports = { app, conectarBanco };
+module.exports = app;
