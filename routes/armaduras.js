@@ -82,7 +82,7 @@ module.exports = router;
 */
 
 
-var express = require('express');
+/* var express = require('express');
 var router = express.Router();
 
 // Rota para a lista principal (/armaduras)
@@ -107,6 +107,47 @@ router.get('/equip/:slug', async (req, res) => {
     if (!db) return res.status(500).send('Servidor a conectar ao banco de dados...');
 
     const item = await db.collection('equipamentos').findOne({ slug: req.params.slug });
+    
+    if (!item) {
+      return res.status(404).render('error', { message: 'Equipamento não encontrado' });
+    }
+
+    res.render('equip/detalhe', { item });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Erro interno do servidor');
+  }
+});
+
+module.exports = router;
+*/
+
+var express = require('express');
+var router = express.Router();
+
+// Rota principal (/armaduras)
+router.get('/', async (req, res) => {
+  try {
+    const db = req.app.get('db');
+    if (!db) return res.status(500).send('Servidor a conectar ao banco de dados...');
+
+    // Busca todos os documentos na coleção 'equipamentos' do banco 'db_rakens'
+    const listaArmaduras = await db.collection('equipamentos').find({}).toArray();
+    res.render('equip/armaduras', { armaduras: listaArmaduras });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Erro ao buscar armaduras no banco de dados');
+  }
+});
+
+// Rota dinâmica (/armaduras/equip/10esperanca)
+router.get('/equip/:slug', async (req, res) => {
+  try {
+    const db = req.app.get('db');
+    if (!db) return res.status(500).send('Servidor a conectar ao banco de dados...');
+
+    // Busca pelo campo 'les_' que é onde estão salvos os slugs no seu Atlas
+    const item = await db.collection('equipamentos').findOne({ les_: req.params.slug });
     
     if (!item) {
       return res.status(404).render('error', { message: 'Equipamento não encontrado' });

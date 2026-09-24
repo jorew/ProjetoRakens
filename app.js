@@ -142,7 +142,7 @@ async function conectarBanco() {
     console.log('✅ Conectado com sucesso ao MongoDB Atlas!');
     
     // Guarda a referência do banco de dados 'exercicos' na aplicação Express
-    app.set('db', client.db('TestandoMongoDB'));
+    app.set('db', client.db('db_rakens'));
   } catch (err) {
     console.error('❌ Erro CRÍTICO ao conectar ao MongoDB Atlas:', err);
   }
