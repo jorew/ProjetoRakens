@@ -131,7 +131,7 @@ var app = express();
 
 // 2. String de Conexão com o MongoDB Atlas
 // ATENÇÃO: Substitua <sua_senha> pela sua senha real do banco de dados
-const uri = "mongodb+srv://jorewmario_db_user:<sua_senha>@testandomongodb.izcp8zd.mongodb.net/exercicos?retryWrites=true&w=majority";
+const uri = "mongodb+srv://jorewmario_db_user:amoreraridade14@testandomongodb.izcp8zd.mongodb.net/exercicos?retryWrites=true&w=majority";
 
 const client = new MongoClient(uri);
 
