@@ -1,4 +1,4 @@
-var createError = require('http-errors');
+/*var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -45,6 +45,67 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
+*/
+
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
+// 1. Importa o cliente do MongoDB Nativo
+const { MongoClient } = require('mongodb');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var contextRouter = require('./routes/contexto');
+var armRouter = require('./routes/armaduras');
+
+var app = express();
+
+// 2. Cole a sua Connection String do MongoDB Atlas aqui
+const uri = "mongodb+srv://jorewmario_db_user:VYI3VploxCCR4JWb@testandomongodb.izcp8zd.mongodb.net/db_rakens?appName=TestandoMongoDB"; 
+
+const client = new MongoClient(uri);
+
+client.connect()
+  .then(() => {
+    console.log('Conectado com sucesso ao MongoDB Atlas via Connection String!');
+    // Guarda o banco de dados na aplicação para usar nas rotas
+    app.set('db', client.db('projetorakens'));
+  })
+  .catch(err => console.error('Erro de conexão ao MongoDB Atlas:', err));
+
+// Configuração da View Engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/contexto', contextRouter);
+app.use('/armaduras', armRouter);
+
+// Trata erro 404
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// Trata outros erros
+app.use(function(err, req, res, next) {
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
   res.render('error');
 });

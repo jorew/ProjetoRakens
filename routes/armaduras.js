@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const Equipamento = require('../models/Equipamento');
 
@@ -78,13 +78,45 @@ router.get('/10esperanca', (req, res) => {
   res.render('equip/10esperanca');
 });
 
-
-
-
-
-
-
-
-
 module.exports = router;
 */
+
+
+var express = require('express');
+var router = express.Router();
+
+// Rota para a lista principal (/armaduras)
+router.get('/', async (req, res) => {
+  try {
+    const db = req.app.get('db');
+    if (!db) return res.status(500).send('Servidor a conectar ao banco de dados...');
+
+    // Procura na coleção "equipamentos" no Atlas
+    const listaArmaduras = await db.collection('equipamentos').find({}).toArray();
+    res.render('equip/armaduras', { armaduras: listaArmaduras });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Erro ao buscar armaduras no banco de dados');
+  }
+});
+
+// Rota dinâmica (/armaduras/equip/1encantamento)
+router.get('/equip/:slug', async (req, res) => {
+  try {
+    const db = req.app.get('db');
+    if (!db) return res.status(500).send('Servidor a conectar ao banco de dados...');
+
+    const item = await db.collection('equipamentos').findOne({ slug: req.params.slug });
+    
+    if (!item) {
+      return res.status(404).render('error', { message: 'Equipamento não encontrado' });
+    }
+
+    res.render('equip/detalhe', { item });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Erro interno do servidor');
+  }
+});
+
+module.exports = router;
