@@ -204,7 +204,7 @@ var armRouter = require('./routes/armaduras');
 var app = express();
 
 // Connection String apontando para o banco 'db_rakens'
-const uri = "mongodb+srv://jorewmario_db_user:<sua_senha>@testandomongodb.izcp8zd.mongodb.net/db_rakens?retryWrites=true&w=majority";
+const uri = "mongodb+srv://jorewmario_db_user:amoreraridade14@testandomongodb.izcp8zd.mongodb.net/db_rakens?retryWrites=true&w=majority";
 
 const client = new MongoClient(uri);
 
