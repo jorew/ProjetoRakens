@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Conexão com o MongoDB local (criado via Compass)
-mongoose.connect('mongodb+srv://jorewmario_db_user:DB29062009Jmmc@testandomongodb.izcp8zd.mongodb.net/?appName=TestandoMongoDB')
+mongoose.connect('mongodb+srv://jorewmario_db_user:SUA_SENHA_AQUI@testandomongodb.izcp8zd.mongodb.net/db_rakens?retryWrites=true&w=majority')
   .then(() => console.log('Conectado ao MongoDB com sucesso!'))
   .catch((err) => console.error('Erro ao conectar ao MongoDB:', err));
 
