@@ -11,7 +11,7 @@
 <br>
   <h1 style="color: white; text-align: center;">Os Rakens Lendários</h1>
 <pre></pre>
- 
+
 <main>
   <h3 class="n3-align">Armaduras Raken</h3>
 
@@ -23,11 +23,14 @@
   <ol>
     <% armaduras.forEach(function(item) { %>
       <li>
-        <a href="/armaduras/equip/<%= item.slug %>">
+        <a href="/armaduras/equip/<%= item.les_ %>">
           <div class="container-flex2">
-            <!-- Caso tenha guardado o caminho da imagem no banco (item.imagem), use-o aqui. 
-                 Caso contrário, mantemos a imagem padrão de exemplo. -->
-            <img src="/images/SymbolsRL/vitoriaregiaRL.png" alt="<%= item.nome %>">
+            <!-- Pega o caminho completo ou URL da imagem direto do campo item.imagem do Atlas -->
+            <img 
+              src="<%= item.imagem || '/images/SymbolsRL/vitoriaregiaRL.png' %>" 
+              alt="Símbolo <%= item.nome %>"
+              onerror="this.src='/images/SymbolsRL/vitoriaregiaRL.png';"
+            >
             <h4 class="a-aar">Raken <%= item.nome %></h4>
           </div>
         </a>
@@ -43,20 +46,6 @@
 
 </body>
 </html>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
 <!-- <!DOCTYPE html>
 <html lang="pt-br">
