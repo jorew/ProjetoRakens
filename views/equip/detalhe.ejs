@@ -1,19 +1,51 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styleRL.css">
+    <title>Raken <%= item.nome %></title>
+</head>
+<body>
 
-<main class="container">
-  <h1><%= item.nome %> (ID: <%= item._id %>)</h1>
-  <p><strong>Dono:</strong> <%= item.dono %></p>
-  <p><strong>Conceito:</strong> <%= item.conceito %></p>
-  <p><strong>Dignidade:</strong> <%= item.dignidade %></p>
+<main>
+  <%- include('../partials/header') %>
 
-  <h2>Habilidades:</h2>
-  <ul>
-    <% item.habilidades.forEach(function(habilidade) { %>
-      <li><%= habilidade %></li>
-    <% }); %>
-  </ul>
+  <br>
+  <a href="/armaduras" style="color: white;">← Voltar para a Lista</a>
+  <br><br>
 
-  <p><%= item.descricao %></p>
+  <h1 style="color: white; text-align: center;"><%= item.nome %></h1>
+
+  <div style="text-align: center;">
+    <img 
+      src="/images/SymbolsRL/<%= item.slug || item.les_ %>.png" 
+      alt="Símbolo <%= item.nome %>"
+      width="200"
+      onerror="this.src='/images/SymbolsRL/vitoriaregiaRL.png';"
+    >
+  </div>
+
+  <section style="color: white; max-width: 600px; margin: 0 auto;">
+    <p><strong>Dono:</strong> <%= item.dono %></p>
+    <p><strong>RakanDeã:</strong> <%= item.RakanDeã %></p>
+    <p><strong>RakanMalian:</strong> <%= item.RakanMalian %></p>
+    <p><strong>Conceito:</strong> <%= item.conceito %></p>
+    <p><strong>Dignidade:</strong> <%= item.dignidade %></p>
+
+    <!-- Exibindo a lista de Habilidades/Array -->
+    <% if (item.habilidades && item.habilidades.length > 0) { %>
+      <h3>Habilidades:</h3>
+      <ul>
+        <% item.habilidades.forEach(function(hab) { %>
+          <li><%= hab %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </section>
+
+  <%- include('../partials/footer') %>
 </main>
 
-<%- include('../partials/footer') %>
+</body>
+</html>

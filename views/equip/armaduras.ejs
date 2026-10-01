@@ -1,3 +1,32 @@
+<ol>
+    <% armaduras.forEach(function(item) { %>
+        <li>
+              <!-- O link envia o slug na URL (ex: /armaduras/equip/1encantamento) -->
+                    <a href="/armaduras/equip/<%= item.slug || item.les_ %>">
+                            <div class="container-flex2">
+                                      <img 
+                                                  src="/images/SymbolsRL/<%= item.slug || item.les_ %>.png" 
+                                                              alt="Símbolo <%= item.nome %>"
+                                                                          onerror="this.src='/images/SymbolsRL/vitoriaregiaRL.png';"
+                                                                                    >
+                                                                                              <h4 class="a-aar">Raken <%= item.nome %></h4>
+                                                                                                      </div>
+                                                                                                            </a>
+                                                                                                                </li>
+                                                                                                                    <br>
+                                                                                                                      <% }); %>
+                                                                                                                      </ol>
+                                                                                                                                                                                                                                    
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,11 +54,11 @@
       <li>
         <a href="/armaduras/equip/<%= item.les_ %>">
           <div class="container-flex2">
-            <!-- Pega o caminho completo ou URL da imagem direto do campo item.imagem do Atlas -->
+            Pega o caminho completo ou URL da imagem direto do campo item.imagem do Atlas 
             <img 
-              src="<%= item.imagem || '/images/SymbolsRL/vitoriaregiaRL.png' %>" 
+              src="<%= item.imagem || '/images/SymbolsRL/10esperanca.png' %>" 
               alt="Símbolo <%= item.nome %>"
-              onerror="this.src='/images/SymbolsRL/vitoriaregiaRL.png';"
+              onerror="this.src='/images/SymbolsRL/10esperanca.png';"
             >
             <h4 class="a-aar">Raken <%= item.nome %></h4>
           </div>
@@ -47,6 +76,26 @@
 </body>
 </html>
  
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
