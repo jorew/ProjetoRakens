@@ -9,9 +9,10 @@ const { MongoClient } = require('mongodb');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var contextRouter = require('./routes/contexto');
+var canticoRouter = require('./routes/canticos');
 var armRouter = require('./routes/armaduras');
 var detalheRouter = require('./routes/detalhe');
-var canticoRouter = require('./routes/canticos');
+
 
 
 var app = express();
@@ -45,9 +46,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contexto', contextRouter);
+app.use('/canticos', canticoRouter);
 app.use('/armaduras', armRouter);
 app.use('/detalhe', detalheRouter);
-app.use('/canticos', canticoRouter);
+
 
 // Tratamento 404
 app.use(function(req, res, next) {
