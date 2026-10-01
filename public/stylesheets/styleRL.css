@@ -41,7 +41,7 @@ body {
   background-color: #a32626;
   overflow: hidden;
 }
-/*weehjfjkdsjngjkfnsjdhfskdekekjgkgjhsfdgfkgjgsjgj*/
+
 .menu a {
   color: white;
   text-decoration: none;
@@ -208,10 +208,10 @@ border-color: goldenrod;
 }
 
 .imagem-apresent {
-max-height: 300px;
-max-width: 280px;
+max-height: 400px;
+max-width: 340px;
 padding: 10px;
-border-radius: 60px;
+border-radius: 100px;
 border-color: goldenrod;
 }
 
