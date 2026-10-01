@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 var contextRouter = require('./routes/contexto');
 var armRouter = require('./routes/armaduras');
 var detalheRouter = require('./routes/detalhe');
-
+var canticoRouter = require('./routes/canticos');
 
 
 var app = express();
@@ -47,6 +47,7 @@ app.use('/users', usersRouter);
 app.use('/contexto', contextRouter);
 app.use('/armaduras', armRouter);
 app.use('/detalhe', detalheRouter);
+app.use('/canticos', canticoRouter);
 
 // Tratamento 404
 app.use(function(req, res, next) {

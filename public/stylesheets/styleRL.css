@@ -37,6 +37,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 300px; 
   border-radius: 10px;
   background-color: #a32626;
   overflow: hidden;
@@ -46,8 +47,9 @@ body {
   color: white;
   text-decoration: none;
   padding: 15px 20px;
-  font-size: 12px;
+  font-size: 50px;
   border-right: 1px solid #333;
+  text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 }
 
 .menu a:hover {
@@ -206,8 +208,8 @@ border-color: goldenrod;
 }
 
 .imagem-apresent {
-max-height: 130px;
-max-width: 110px;
+max-height: 250px;
+max-width: 230px;
 padding: 10px;
 border-radius: 60px;
 border-color: goldenrod;
