@@ -9,7 +9,7 @@ router.get('/:slug', async (req, res) => {
 
     const slugParam = req.params.slug;
 
-    // Procura no MongoDB Atlas pelo slug ou les_
+    // Busca no MongoDB Atlas pelo campo slug ou les_
     const armaduraEncontrada = await db.collection('equipamentos').findOne({
       $or: [
         { slug: slugParam },
