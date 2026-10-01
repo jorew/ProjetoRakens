@@ -31,41 +31,53 @@
 
    <h3 class="n3-align"><%= item.nome %></h3>
 
-  <div style="text-align: center;">
-    <img class="imagem-apresent"
-      src="/images/SymbolsRL/<%= item.slug || item.les_ %>.png" 
-      alt="Símbolo <%= item.nome %>"
-      width="200"
-      onerror="this.src='/images/SymbolsRL/10esperanca.png';"
-    >
+  <br>
+  <div style="max-width: 500px; margin: 0 auto;">
+    <a href="/armaduras" class="btn-voltar">← Voltar para a Lista</a>
   </div>
+  <br>
 
-  <section style="color: white; max-width: 600px; margin: 0 auto;">
-    <p><strong>Dono:</strong> <%= item.dono %></p>
-    <p><strong>RakanDeã:</strong> <%= item.RakanDeã %></p>
-    <p><strong>RakanMalian:</strong> <%= item.RakanMalian %></p>
-    <p><strong>Conceito:</strong> <%= item.conceito %></p>
-    <p><strong>Dignidade:</strong> <%= item.dignidade %></p>
+  <!-- CARD ESTILO RPG -->
+  <article class="rpg-card">
+    <header class="rpg-header">
+      <h1 class="rpg-title"><%= item.nome %></h1>
+      <span class="rpg-subtitle">Armadura Lendária Raken</span>
+    </header>
 
-    <!-- Exibindo a lista de Habilidades/Array -->
+    <div class="rpg-image-container">
+      <img 
+        src="/images/SymbolsRL/<%= item.slug || item.les_ %>.png" 
+        alt="Símbolo <%= item.nome %>"
+        class="rpg-symbol"
+        onerror="this.src='/images/SymbolsRL/10esperanca.png';"
+      >
+    </div>
+
+    <div class="rpg-divider"></div>
+
+    <section class="rpg-stats">
+      <p><span>Dono:</span> <strong><%= item.dono %></strong></p>
+      <p><span>RakanDeã:</span> <strong><%= item.RakanDeã %></strong></p>
+      <p><span>RakanMalian:</span> <strong><%= item.RakanMalian %></strong></p>
+      <p><span>Conceito:</span> <strong><%= item.conceito %></strong></p>
+      <p><span>Dignidade:</span> <strong class="stat-highlight"><%= item.dignidade %></strong></p>
+    </section>
+
     <% if (item.habilidades && item.habilidades.length > 0) { %>
-      <h3>Habilidades:</h3>
-      <ul>
-        <% item.habilidades.forEach(function(hab) { %>
-          <li><%= hab %></li>
-        <% }); %>
-      </ul>
+      <div class="rpg-divider"></div>
+
+      <section class="rpg-skills">
+        <h3>Habilidades Concedidas:</h3>
+        <ul>
+          <% item.habilidades.forEach(function(hab) { %>
+            <li><%= hab %></li>
+          <% }); %>
+        </ul>
+      </section>
     <% } %>
-  </section>
+  </article>
 
-  <pre>
-
-
-
-
-
-  </pre>
-
+  <br>
   <%- include('../partials/footer') %>
 </main>
 

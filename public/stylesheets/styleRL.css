@@ -215,6 +215,133 @@ border-radius: 100px;
 border-color: goldenrod;
 }
 
+/* ==========================
+   CARD DE ITEM ESTILO RPG
+   ========================== */
+
+/* Botão Voltar */
+.btn-voltar {
+  color: #ffd700;
+  text-decoration: none !important;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: color 0.3s ease;
+}
+.btn-voltar:hover {
+  color: #ffffff;
+}
+
+/* Container do Card */
+.rpg-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #181214 0%, #0c0809 100%);
+  border: 2px solid #c5a059;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197, 160, 89, 0.2);
+  color: #e0e0e0;
+  font-family: 'Georgia', serif;
+  position: relative;
+}
+
+/* Efeito de brilho nas bordas do card */
+.rpg-card::before {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px; right: 3px; bottom: 3px;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+/* Cabeçalho */
+.rpg-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.rpg-title {
+  color: #ffd700;
+  font-size: 1.8rem;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  letter-spacing: 1px;
+}
+.rpg-subtitle {
+  color: #a89f91;
+  font-size: 0.85rem;
+  font-style: italic;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Imagem Central */
+.rpg-image-container {
+  text-align: center;
+  margin: 15px 0;
+}
+.rpg-symbol {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.4));
+  transition: transform 0.3s ease;
+}
+.rpg-symbol:hover {
+  transform: scale(1.05);
+}
+
+/* Divisor Decorativo */
+.rpg-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c5a059, transparent);
+  margin: 18px 0;
+}
+
+/* Atributos / Stats */
+.rpg-stats p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 4px;
+}
+.rpg-stats span {
+  color: #a89f91;
+}
+.rpg-stats strong {
+  color: #ffffff;
+}
+.stat-highlight {
+  color: #00ffcc !important; /* Destaque para a Dignidade */
+  text-shadow: 0 0 5px rgba(0, 255, 204, 0.4);
+}
+
+/* Habilidades */
+.rpg-skills h3 {
+  color: #ffd700;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.rpg-skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rpg-skills li {
+  background: rgba(197, 160, 89, 0.08);
+  border-left: 3px solid #c5a059;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #f0e6d2;
+  border-radius: 0 4px 4px 0;
+}
+
+
+
 /* Este container está vinculado ao playlist.js */
 /* Container Principal do Footer */
 #container_footer {
