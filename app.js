@@ -46,7 +46,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contexto', contextRouter);
 app.use('/armaduras', armRouter);
-app.use('/detalhe, detalheRouter');
+app.use('/detalhe', detalheRouter);
 
 // Tratamento 404
 app.use(function(req, res, next) {
