@@ -91,7 +91,7 @@ text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 font-size: 30px;
 color: rgb(192, 144, 32);
 text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
-text-decoration: none;
+text-decoration: none !important;
 }
 
 
