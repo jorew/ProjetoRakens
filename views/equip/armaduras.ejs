@@ -1,4 +1,76 @@
 
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styleRL.css">
+    <title>Armaduras</title>
+</head>
+<body>
+
+<br>
+  <h1 style="color: white; text-align: center;">Os Rakens Lendários</h1>
+<pre></pre>
+
+<main>
+  <h3 class="n3-align">Armaduras Raken</h3>
+
+  <%- include('../partials/header') %>
+  <br>
+  <h3 class="n3-align">Lista de Armaduras</h3>
+  <br>
+
+  <ol>
+    <% armaduras.forEach(function(item) { %>
+      <li>
+        <!-- Mapeia o link dinâmico usando item.slug -->
+        <a href="/armaduras/equip/<%= item.slug || item.les_ %>">
+          <div class="container-flex2">
+            
+            <!-- Carrega a imagem com o mesmo nome do slug -->
+            <img 
+              src="/images/SymbolsRL/<%= item.slug || item.les_ %>.png" 
+              alt="Símbolo <%= item.nome %>"
+              onerror="this.src='/images/SymbolsRL/vitoriaregiaRL.png';"
+            >
+            
+            <h4 class="a-aar">Raken <%= item.nome %></h4>
+          </div>
+        </a>
+      </li>
+      <br>
+    <% }); %>
+  </ol>
+
+  <pre></pre>
+
+  <%- include('../partials/footer') %>
+</main>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,7 +98,7 @@
 <ol>
     <% armaduras.forEach(function(item) { %>
         <li>
-              <!-- O link envia o slug na URL (ex: /armaduras/equip/1encantamento) -->
+              O link envia o slug na URL (ex: /armaduras/equip/1encantamento) 
                     <a href="/armaduras/equip/<%= item.slug || item.les_ %>">
                             <div class="container-flex2">
                                       <img 
@@ -49,7 +121,7 @@
 
 </body>
 </html>
-
+-->
 
 
 
