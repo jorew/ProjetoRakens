@@ -21,7 +21,7 @@ body {
   color: white;
   text-align: center;
   text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
-  font-size: 80px;
+  font-size: 40px;
 }
 
 .pagina {
@@ -41,12 +41,12 @@ body {
   background-color: #a32626;
   overflow: hidden;
 }
-
+/*weehjfjkdsjngjkfnsjdhfskdekekjgkgjhsfdgfkgjgsjgj*/
 .menu a {
   color: white;
   text-decoration: none;
   padding: 15px 20px;
-  font-size: 30px;
+  font-size: 20px;
   border-right: 1px solid #333;
   text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 }
@@ -106,7 +106,7 @@ text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 
 
 .p-cont {
-font-size: 30px;
+font-size: 20px;
 text-align: center;
 padding-left: 20px;
 padding-right: 20px;
@@ -141,8 +141,8 @@ align-items: center;
 
 .container-flex img {
 border-radius: 25px;
-max-width: 380px; 
-max-height: 400px;
+max-width: 320px; 
+max-height: 350px;
 padding: 10px;
 
 }
