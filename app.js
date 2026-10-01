@@ -9,7 +9,7 @@ const { MongoClient } = require('mongodb');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var contextRouter = require('./routes/contexto');
-var canticoRouter = require('./routes/canticos');
+var canticoRouter = require('./routes/cantico');
 var armRouter = require('./routes/armaduras');
 var detalheRouter = require('./routes/detalhe');
 
@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contexto', contextRouter);
-app.use('/canticos', canticoRouter);
+app.use('/cantico', canticoRouter);
 app.use('/armaduras', armRouter);
 app.use('/detalhe', detalheRouter);
 
