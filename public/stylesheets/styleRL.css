@@ -91,7 +91,7 @@ text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 font-size: 30px;
 color: rgb(192, 144, 32);
 text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
-
+text-decoration: none;
 }
 
 
@@ -207,8 +207,8 @@ border-color: goldenrod;
 }
 
 .imagem-apresent {
-max-height: 250px;
-max-width: 230px;
+max-height: 300px;
+max-width: 280px;
 padding: 10px;
 border-radius: 60px;
 border-color: goldenrod;
