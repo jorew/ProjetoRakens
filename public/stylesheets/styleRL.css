@@ -133,6 +133,7 @@ animation: aparecer 5s ease;
 
 
 .container-flex {
+width: 100%;
 border-radius: 15px;
 background-color: #a32626;
 display: flex;
