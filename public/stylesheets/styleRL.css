@@ -128,8 +128,19 @@ animation: aparecer 5s ease;
 
 
 
+.container-flex4 {
+  width: 100%;
+  border-radius: 20px;
+  background-color: #a32626;
+  align-items: center;
+}
 
-
+.container-flex4 img {
+  border-radius: 25px;
+  max-width: 500px;
+  max-height: 550px;
+  padding: 10px;
+}
 
 
 .container-flex {
