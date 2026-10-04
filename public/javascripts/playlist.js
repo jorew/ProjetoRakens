@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Exemplo de playlist (Substitua pelos caminhos dos seus arquivos de áudio)
     const playlist = [
       { 
-        title: "Nome da Sua Música - Artista Exemplo", 
-        src: " " 
+        title: "Deus Me Fez Assim - Jorew Mário", 
+        src: "Os Rakens.mp3" 
       },
       { 
         title: "Segunda Música - Outro Artista", 
