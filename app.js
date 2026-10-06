@@ -13,6 +13,8 @@ var canticoRouter = require('./routes/cantico');
 var armRouter = require('./routes/armaduras');
 var detalheRouter = require('./routes/detalhe');
 var obraRouter = require('./routes/obra');
+var cardsRouter = require('./routes/cards');
+var sobreRouter = require('./routes/sobre');
 
 
 var app = express();
@@ -50,6 +52,8 @@ app.use('/cantico', canticoRouter);
 app.use('/armaduras', armRouter);
 app.use('/detalhe', detalheRouter);
 app.use('/obra', obraRouter);
+app.use('/cards', cardsRouter);
+app.use('/sobre', sobreRouter);
 
 
 // Tratamento 404
