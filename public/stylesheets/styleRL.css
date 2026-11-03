@@ -129,9 +129,7 @@ animation: aparecer 5s ease;
   padding-left: 50px;
   padding-right: 50px;
   display: flex;
-  flex-direction: row; /* Opcional, já é o comportamento padrão */
-  gap: 15px;  
-
+  
 }
 
 
