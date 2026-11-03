@@ -299,6 +299,8 @@ border-color: goldenrod;
 .rpg-image-container {
   text-align: center;
   margin: 15px 0;
+  padding: 25px;
+
 }
 .rpg-symbol {
   width: 170px;
