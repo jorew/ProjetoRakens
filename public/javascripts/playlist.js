@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playlist = [
       { 
         title: "Deus Me Fez Assim - Jorew Mário", 
-        src: "Deus-me-fez-assim.mp3" 
+        src: "/playlist/Deus-me-fez-assim.mp3" 
       },
       { 
         title: "Segunda Música - Outro Artista", 
