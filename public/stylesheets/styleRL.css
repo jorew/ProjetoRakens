@@ -8,10 +8,10 @@ html, body {
 body {
   background: linear-gradient(45deg,
       #000000 0%,
-      #200000 25%,
-      #500000 50%,
-      #800000 75%,
-      #b00000 100%);
+      #200326 25%,
+      #460763 50%,
+      #230763 75%,
+      #4007a3 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -107,16 +107,6 @@ color: rgb(192, 144, 32);
 text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 
 }
-
-
-
-
-
-
-
-
-
-
 
 .p-cont {
 font-size: 20px;
