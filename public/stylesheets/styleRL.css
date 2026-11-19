@@ -69,6 +69,19 @@ text-align: center;
 text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 }
 
+#main-content {
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  padding-bottom: 95px;
+  box-sizing: border-box;
+  animation: fadeInPage 0.25s ease-in-out;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
 
 .p-int {
 font-size: 30px;
