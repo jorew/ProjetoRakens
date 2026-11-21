@@ -38,17 +38,18 @@ body {
   flex-direction: row;
   width: 100%; 
   border-radius: 10px;
-  background-color: #a32626;
+  background-color: linear-gradient(45deg, #100729 50%, #200729 50%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197,160,89, 0.2);
   overflow: hidden;
 }
 
 .menu a {
-  color: white;
+  color: #ffd700;
   text-decoration: none;
   padding: 15px 20px;
   font-size: 20px;
   border-right: 1px solid #333;
-  text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5)
 }
 
 .menu a:hover {
