@@ -15,6 +15,34 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  /* Remove o quadrado azul padrão de toque no Android/iOS */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Estilo do círculo animado */
+.onda-clique {
+  position: fixed; /* Fixo na tela para acompanhar o viewport */
+  border-radius: 50%;
+  background: rgba(0, 150, 255, 0.35); /* Cor e transparência do círculo */
+  pointer-events: none; /* Impede que o círculo bloqueie novos cliques */
+  transform: translate(-50%, -50%) scale(0);
+  animation: expandir-onda 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 9999;
+}
+
+@keyframes expandir-onda {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
 }
 
 .tituloprin {
