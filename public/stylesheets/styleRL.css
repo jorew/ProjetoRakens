@@ -107,8 +107,7 @@ text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
   text-decoration: none !important;
 font-size: 30px;
 color: rgb(192, 144, 32);
-text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
-
+text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
 }
 
 .p-cont {
@@ -184,10 +183,13 @@ text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
 
 .container-flex2 {
 border-radius: 20px;
-background-color: #a32626;
+border: 1.5px solid #ffd700;
+background-color: linear-gradient(45deg, #0a0324 0%, #031a24 100%);
 display: flex;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197,160,89, 0.2);
 align-items: center;
 width: auto;
+padding: 10px;
 height: 120px;
 }
 
@@ -196,6 +198,7 @@ height: 120px;
 max-height: 110px;
 max-width: 90px;
 padding: 10px;
+border: 1.5px solid #ffd700;
 border-radius: 50px;
 
 }
