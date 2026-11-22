@@ -18,10 +18,11 @@ body {
 }
 
 .tituloprin {
-  color: white;
-  text-align: center;
-  text-shadow: 5px 5px 15px rgba(0, 0, 1, 1);
-  font-size: 40px;
+  display: block;       /* permite usar margin auto */
+  margin: 0 auto;       /* centraliza na horizontal */
+  width: 450px;         /* tamanho desejado no computador */
+  max-width: 90%;       /* impede que corte em telas pequenas/celular */
+  height: auto;
 }
 
 .pagina {
