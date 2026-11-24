@@ -71,12 +71,14 @@ body {
   border:2px #000000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197,160,89, 0.2);
   overflow: hidden;
+  justify-content: center;
 }
 
 .menu a {
   color: #ffd700;
   text-decoration: none;
   padding: 15px 20px;
+  border-radius: 10px;
   font-size: 20px;
   border: 2px solid #333;
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.5)
